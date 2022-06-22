@@ -22,7 +22,7 @@ class SignUpaPage extends StatelessWidget {
         return Scaffold(
           resizeToAvoidBottomInset: false,
           appBar: AuthAppBar.myAppBar(
-              leading: 'New Registration', context: context),
+              title: 'New Registration', context: context),
           body: Container(
             padding: EdgeInsets.symmetric(horizontal: 20.0),
             height: context.h,
@@ -125,7 +125,7 @@ class SignUpaPage extends StatelessWidget {
                           context: context,
                           title: 'Sign Up',
                           route: () {
-                            Navigator.pushNamed(context, '/forgotpass');
+                            Navigator.pushNamed(context, '/resetpass');
                           },
                         ),
                         Text(

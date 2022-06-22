@@ -7,7 +7,7 @@ import 'package:on_click/on_click.dart';
 
 class AuthAppBar {
   static PreferredSizeWidget myAppBar(
-      {required String leading, required BuildContext context}) {
+      {required String title, required BuildContext context}) {
     return AppBar(
       leading: Icon(
         Icons.chevron_left_outlined,
@@ -17,7 +17,7 @@ class AuthAppBar {
       ).onClick(() {
         Navigator.pop(context);
       }),
-      title: Text(leading),
+      title: Text(title),
       titleTextStyle: MyTextStyle.textStyle(context: context, size: 18),
       elevation: 0.0,
       backgroundColor: Colors.transparent,

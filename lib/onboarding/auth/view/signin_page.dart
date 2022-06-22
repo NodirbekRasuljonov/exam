@@ -104,6 +104,13 @@ class SignInPage extends StatelessWidget {
                               alignment: Alignment.center,
                               height: context.h * 0.068,
                               width: context.h * 0.048,
+                              decoration: BoxDecoration(
+                                border: Border(
+                                  right: BorderSide(
+                                    color: ColorConst.greyColor,
+                                  ),
+                                ),
+                              ),
                               child: SvgPicture.asset('assets/svg/lock.svg'),
                             ),
                             Container(
