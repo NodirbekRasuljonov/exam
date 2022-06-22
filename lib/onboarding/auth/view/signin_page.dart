@@ -3,8 +3,8 @@ import 'package:exam/core/constants/color_const.dart';
 import 'package:exam/core/constants/size_constants.dart';
 import 'package:exam/core/extensions/size_extension.dart';
 import 'package:exam/main/cubit/main_cubit.dart';
-import 'package:exam/onboarding/auth/cubit/signin_cubit.dart';
-import 'package:exam/onboarding/auth/state/signin_state.dart';
+import 'package:exam/onboarding/auth/cubit/auth-cubit.dart';
+import 'package:exam/onboarding/auth/state/auth_state.dart';
 import 'package:exam/onboarding/auth/widgets/my_elevated_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -15,7 +15,7 @@ class SignInPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<SignInCubit, SignInState>(
+    return BlocConsumer<AuthCubit, AuthState>(
       builder: (context, state) {
         return Scaffold(
           body: body(context),
@@ -45,10 +45,14 @@ class SignInPage extends StatelessWidget {
               bottom: context.h * 0.045,
               right: context.h * 0.02,
               child: MyElevatedButton.button(
-                context: context,
-                title: 'Sign In',
-                route: '/signUp',
-              ),
+                  context: context,
+                  title: 'Sign In',
+                  route: () {
+                    Navigator.pushNamed(
+                      context,
+                      '/signUp',
+                    );
+                  }),
             ),
             Positioned(
               top: context.h * 0.470,
@@ -88,6 +92,9 @@ class SignInPage extends StatelessWidget {
                         height: context.h * 0.068,
                         width: context.h * 0.45,
                         decoration: BoxDecoration(
+                            color: context.watch<MainCubit>().isDark
+                                ? ColorConst.fieldColor
+                                : Colors.transparent,
                             borderRadius: BorderRadius.circular(100.0),
                             border: Border.all(color: ColorConst.greyColor)),
                         child: Row(
@@ -110,10 +117,8 @@ class SignInPage extends StatelessWidget {
                                 decoration: InputDecoration(
                                   border: InputBorder.none,
                                   hintText: 'Your Phone number',
-                                  hintStyle: TextStyle(
-                                    color:  ColorConst.greyColor
-                                       
-                                  ),
+                                  hintStyle:
+                                      TextStyle(color: ColorConst.greyColor),
                                 ),
                               ),
                             ),
@@ -127,8 +132,12 @@ class SignInPage extends StatelessWidget {
                         height: context.h * 0.068,
                         width: context.h * 0.45,
                         decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(100.0),
-                            border: Border.all(color: ColorConst.greyColor)),
+                          color: context.watch<MainCubit>().isDark
+                              ? ColorConst.fieldColor
+                              : Colors.transparent,
+                          borderRadius: BorderRadius.circular(100.0),
+                          border: Border.all(color: ColorConst.greyColor),
+                        ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -148,10 +157,8 @@ class SignInPage extends StatelessWidget {
                                 decoration: InputDecoration(
                                   border: InputBorder.none,
                                   hintText: 'Password',
-                                   hintStyle: TextStyle(
-                                    color:  ColorConst.greyColor
-                                        
-                                  ),
+                                  hintStyle:
+                                      TextStyle(color: ColorConst.greyColor),
                                 ),
                               ),
                             ),

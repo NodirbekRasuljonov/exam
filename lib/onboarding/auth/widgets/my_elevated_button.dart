@@ -1,4 +1,3 @@
-import 'package:exam/core/components/my_textstyle.dart';
 import 'package:exam/core/constants/color_const.dart';
 import 'package:exam/core/constants/size_constants.dart';
 import 'package:exam/core/extensions/size_extension.dart';
@@ -8,18 +7,18 @@ class MyElevatedButton {
   static ElevatedButton button(
       {required BuildContext context,
       required String title,
-      required String route}) {
+      required Function route}) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         elevation: 0.0,
-        fixedSize: Size(context.h * 0.374, context.h * 0.053),
+        fixedSize: Size(context.h * 0.45, context.h * 0.06),
         primary: ColorConst.kprimaryColor,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(100.0),
         ),
       ),
       onPressed: () {
-        Navigator.pushNamed(context, route);
+        route();
       },
       child: Text(
         title,
