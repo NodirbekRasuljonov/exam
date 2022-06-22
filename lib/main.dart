@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
       builder: (context, state) {
         return MaterialApp(
           onGenerateRoute: appRoutes.onGenerateRoute,
-          initialRoute: '/forgotpass',
+          initialRoute: '/otp',
           theme: context.watch<MainCubit>().isDark
               ? ThemeComp.darkmode
               : ThemeComp.lightmode,

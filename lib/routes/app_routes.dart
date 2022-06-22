@@ -1,5 +1,6 @@
 import 'package:exam/onboarding/auth/view/forgot_password_page.dart';
 import 'package:exam/onboarding/auth/view/otp_page.dart';
+import 'package:exam/onboarding/auth/view/reset_password_page.dart';
 import 'package:exam/onboarding/auth/view/signin_page.dart';
 import 'package:exam/onboarding/auth/view/signup_page.dart';
 import 'package:exam/onboarding/splashscreen.dart';
@@ -28,6 +29,10 @@ class AppRoutes {
         case '/otp':
         return MaterialPageRoute(
           builder: (context) => OTPPage(),
+        );
+        case '/respass':
+        return MaterialPageRoute(
+          builder: (context) => ResetPasswordPage(),
         );
     }
   }
