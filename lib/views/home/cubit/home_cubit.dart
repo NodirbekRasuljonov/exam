@@ -7,12 +7,29 @@ class HomeCubit extends Cubit<HomeState> {
           HomeInitialState(),
         );
 
+  int currentindex = 0;
 
-        int currentindex=0;
-
-  void changetheIndex({required int index}){
-    currentindex=index;
-    emit(HomeInitialState());
-
+  void changetheIndex({required int index}) {
+    if (index == 0) {
+      currentindex = index;
+      emit(
+        HomeInitialState(),
+      );
+    } else if (index == 1) {
+      currentindex = index;
+      emit(
+        HomeExploreState(),
+      );
+    } else if (index == 2) {
+      currentindex = index;
+      emit(
+        HomeCartState(),
+      );
+    } else {
+      currentindex = index;
+      emit(
+        HomeProfileState(),
+      );
+    }
   }
 }

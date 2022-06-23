@@ -8,5 +8,6 @@ class ColorConst{
   static Color greyColor=Color(0xff92929D);
   static Color texfieldColor=Color(0xffEAEAEA);
   static Color greenColor=Color(0xff2ECC71);
+  
   static Color fieldColor=Color(0xff1D2335);
 }
