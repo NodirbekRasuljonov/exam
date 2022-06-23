@@ -4,6 +4,7 @@ import 'package:exam/onboarding/auth/view/reset_password_page.dart';
 import 'package:exam/onboarding/auth/view/signin_page.dart';
 import 'package:exam/onboarding/auth/view/signup_page.dart';
 import 'package:exam/onboarding/splashscreen.dart';
+import 'package:exam/views/home/view/home_page.dart';
 import 'package:flutter/material.dart';
 
 class AppRoutes {
@@ -33,6 +34,10 @@ class AppRoutes {
         case '/respass':
         return MaterialPageRoute(
           builder: (context) => ResetPasswordPage(),
+        );
+        case '/home':
+        return MaterialPageRoute(
+          builder: (context) => HomePage(),
         );
     }
   }
