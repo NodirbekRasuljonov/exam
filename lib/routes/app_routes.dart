@@ -11,6 +11,8 @@ import 'package:exam/views/profile/view/menus/editprofile/view/edit_profile_page
 import 'package:exam/views/profile/view/menus/editprofile/view/editprofile_otp.dart';
 import 'package:exam/views/profile/view/menus/notifications/view/notification_Settings_page.dart';
 import 'package:exam/views/profile/view/menus/notifications/view/notification_page.dart';
+import 'package:exam/views/profile/view/menus/orders/view/orders_Page.dart';
+import 'package:exam/views/profile/view/menus/payment_method/view/payment_method_page.dart';
 import 'package:exam/views/profile/view/profile_main.dart';
 import 'package:flutter/material.dart';
 
@@ -73,6 +75,14 @@ class AppRoutes {
         case '/address':
         return MaterialPageRoute(
           builder: (context) => AddressPage(),
+        );
+        case '/payment':
+        return MaterialPageRoute(
+          builder: (context) => PaymentMethodPage(),
+        );
+        case '/orders':
+        return MaterialPageRoute(
+          builder: (context) => OrdersPage(),
         );
         
     }

@@ -48,7 +48,9 @@ class ProfilePage extends StatelessWidget {
                               darkIcon: 'assets/svg/profilesvg/ordersdark.svg',
                               lightIcon:
                                   'assets/svg/profilesvg/orderslight.svg',
-                              function: () {},
+                              function: () {
+                                Navigator.pushNamed(context, '/orders');
+                              },
                               context: context),
                           menu(
                               title: 'My Wishlist',
@@ -87,7 +89,9 @@ class ProfilePage extends StatelessWidget {
                               darkIcon: 'assets/svg/profilesvg/paymentdark.svg',
                               lightIcon:
                                   'assets/svg/profilesvg/paymentlight.svg',
-                              function: () {},
+                              function: () {
+                                Navigator.pushNamed(context, '/payment');
+                              },
                               context: context),
                           menu(
                               title: 'Customer Service',

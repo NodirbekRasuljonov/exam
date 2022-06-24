@@ -3,6 +3,7 @@ import 'package:exam/core/constants/color_const.dart';
 import 'package:exam/core/constants/size_constants.dart';
 import 'package:exam/core/extensions/size_extension.dart';
 import 'package:exam/main/cubit/main_cubit.dart';
+import 'package:exam/onboarding/auth/widgets/my_elevated_button.dart';
 import 'package:exam/views/profile/view/menus/addres/cubit/addres_cubit.dart';
 import 'package:exam/views/profile/view/menus/addres/state/addres_state.dart';
 import 'package:exam/views/profile/widgets/appBar.dart';
@@ -43,6 +44,14 @@ class AddressPage extends StatelessWidget {
                   desc: '2715 Ash Dr. San Jose, South Dakota 83475',
                   function: () {},
                 ),
+                SizedBox(
+                  height: context.h*0.5,
+                ),
+                MyElevatedButton.button(
+                  context: context,
+                  title: "Add address",
+                  route: () {},
+                )
               ],
             ),
           ),
