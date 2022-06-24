@@ -59,6 +59,10 @@ class ProfilePage extends StatelessWidget {
                               function: () {},
                               context: context),
                           ListTile(
+                            onTap: (){
+                              debugPrint("Addres");
+                              Navigator.pushNamed(context, '/address');
+                            },
                             title: Text(
                               'My Addres',
                               style: TextStyle(

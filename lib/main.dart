@@ -7,6 +7,7 @@ import 'package:exam/views/cart/cubit/cart_cubit.dart';
 import 'package:exam/views/explore/cubit/explore_cubit.dart';
 import 'package:exam/views/home/cubit/home_cubit.dart';
 import 'package:exam/views/profile/cubit/profile_cubit.dart';
+import 'package:exam/views/profile/view/menus/addres/cubit/addres_cubit.dart';
 import 'package:exam/views/profile/view/menus/changepasswword/cubit/change_password_cubit.dart';
 import 'package:exam/views/profile/view/menus/editprofile/cubit/edit_profile_cubit.dart';
 import 'package:exam/views/profile/view/menus/notifications/cubit/notification_cubit.dart';
@@ -44,6 +45,9 @@ void main(List<String> args) {
         BlocProvider(
           create: (context) => ChnagePasswordCubit(),
         ),
+        BlocProvider(
+          create: (context) => AddressCubit(),
+        ),
       ],
       child: MyApp(),
     ),
@@ -60,7 +64,7 @@ class MyApp extends StatelessWidget {
       builder: (context, state) {
         return MaterialApp(
           onGenerateRoute: appRoutes.onGenerateRoute,
-          initialRoute: '/home',
+          initialRoute: '/address',
           theme: context.watch<MainCubit>().isDark
               ? ThemeComp.darkmode
               : ThemeComp.lightmode,
