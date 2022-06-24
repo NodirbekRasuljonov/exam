@@ -7,6 +7,8 @@ import 'package:exam/views/cart/cubit/cart_cubit.dart';
 import 'package:exam/views/explore/cubit/explore_cubit.dart';
 import 'package:exam/views/home/cubit/home_cubit.dart';
 import 'package:exam/views/profile/cubit/profile_cubit.dart';
+import 'package:exam/views/profile/view/menus/changepasswword/cubit/change_password_cubit.dart';
+import 'package:exam/views/profile/view/menus/editprofile/cubit/edit_profile_cubit.dart';
 import 'package:exam/views/profile/view/menus/notifications/cubit/notification_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -36,6 +38,12 @@ void main(List<String> args) {
         BlocProvider(
           create: (context) => NotificationCubit(),
         ),
+         BlocProvider(
+          create: (context) => EditProfileCubit(),
+        ),
+        BlocProvider(
+          create: (context) => ChnagePasswordCubit(),
+        ),
       ],
       child: MyApp(),
     ),
@@ -52,7 +60,7 @@ class MyApp extends StatelessWidget {
       builder: (context, state) {
         return MaterialApp(
           onGenerateRoute: appRoutes.onGenerateRoute,
-          initialRoute: '/profile',
+          initialRoute: '/home',
           theme: context.watch<MainCubit>().isDark
               ? ThemeComp.darkmode
               : ThemeComp.lightmode,

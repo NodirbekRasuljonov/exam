@@ -39,7 +39,9 @@ class ProfilePage extends StatelessWidget {
                               darkIcon: 'assets/svg/profilesvg/profiledark.svg',
                               lightIcon:
                                   'assets/svg/profilesvg/profilelight.svg',
-                              function: () {},
+                              function: () {
+                                Navigator.pushNamed(context, '/editprofile');
+                              },
                               context: context),
                           menu(
                               title: 'My Orders',
@@ -97,7 +99,9 @@ class ProfilePage extends StatelessWidget {
                                   'assets/svg/profilesvg/passworddark.svg',
                               lightIcon:
                                   'assets/svg/profilesvg/passwordlight.svg',
-                              function: () {},
+                              function: () {
+                                Navigator.pushNamed(context, '/changepass');
+                              },
                               context: context),
                           menu(
                               title: 'Logout',

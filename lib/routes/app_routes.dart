@@ -5,6 +5,9 @@ import 'package:exam/onboarding/auth/view/signin_page.dart';
 import 'package:exam/onboarding/auth/view/signup_page.dart';
 import 'package:exam/onboarding/splashscreen.dart';
 import 'package:exam/views/home/view/home_page.dart';
+import 'package:exam/views/profile/view/menus/changepasswword/view/change_password_page.dart';
+import 'package:exam/views/profile/view/menus/editprofile/view/edit_profile_page.dart';
+import 'package:exam/views/profile/view/menus/editprofile/view/editprofile_otp.dart';
 import 'package:exam/views/profile/view/menus/notifications/view/notification_Settings_page.dart';
 import 'package:exam/views/profile/view/menus/notifications/view/notification_page.dart';
 import 'package:exam/views/profile/view/profile_main.dart';
@@ -54,6 +57,19 @@ class AppRoutes {
         return MaterialPageRoute(
           builder: (context) => NotificationSettings(),
         );
+        case '/editprofile':
+        return MaterialPageRoute(
+          builder: (context) => EditProfilePage(),
+        );
+        case '/editprofileotp':
+        return MaterialPageRoute(
+          builder: (context) => EditProfileOTP(),
+        );
+        case '/changepass':
+        return MaterialPageRoute(
+          builder: (context) => ChangePasswordPage(),
+        );
+        
     }
   }
 }
