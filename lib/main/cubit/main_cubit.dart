@@ -5,5 +5,5 @@ class MainCubit extends Cubit<MainState> {
   MainCubit() : super(MainInittialState(),);
 
 
-  bool isDark=false;
+  bool isDark=true;
 }

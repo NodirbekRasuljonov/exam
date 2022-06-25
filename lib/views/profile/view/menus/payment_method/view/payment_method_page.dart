@@ -49,7 +49,9 @@ class PaymentMethodPage extends StatelessWidget {
                 MyElevatedButton.button(
                   context: context,
                   title: 'Add payment',
-                  route: () {},
+                  route: () {
+                    Navigator.pushNamed(context, '/addpayment');
+                  },
                 )
               ],
             ),
