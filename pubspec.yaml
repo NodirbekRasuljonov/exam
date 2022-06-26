@@ -73,6 +73,8 @@ flutter:
     - assets/svg/profilesvg/editprofile/
     - assets/svg/profilesvg/payment/
     - assets/svg/profilesvg/orders/
+    - assets/svg/data/
+    - assets/svg/explore/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

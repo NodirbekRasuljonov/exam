@@ -4,6 +4,7 @@ import 'package:exam/onboarding/auth/view/reset_password_page.dart';
 import 'package:exam/onboarding/auth/view/signin_page.dart';
 import 'package:exam/onboarding/auth/view/signup_page.dart';
 import 'package:exam/onboarding/splashscreen.dart';
+import 'package:exam/views/explore/view/explore_page.dart';
 import 'package:exam/views/home/view/home_page.dart';
 import 'package:exam/views/profile/view/menus/addres/view/address_page.dart';
 import 'package:exam/views/profile/view/menus/changepasswword/view/change_password_page.dart';
@@ -43,7 +44,7 @@ class AppRoutes {
         return MaterialPageRoute(
           builder: (context) => OTPPage(),
         );
-        case '/respass':
+        case '/resetpass':
         return MaterialPageRoute(
           builder: (context) => ResetPasswordPage(),
         );
@@ -98,6 +99,10 @@ class AppRoutes {
         case '/history':
         return MaterialPageRoute(
           builder: (context) => OrderHistoryPage(),
+        );
+        case '/explore':
+        return MaterialPageRoute(
+          builder: (context) => ExplorePage(),
         );
         
     }

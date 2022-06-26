@@ -24,43 +24,51 @@ class ResetPasswordPage extends StatelessWidget {
           appBar:
               AuthAppBar.myAppBar(title: 'Reset Password', context: context),
           body: SizedBox(
-              height: context.h,
-              width: context.h,
-              child: Form(
-                child: Column(
-                  children: [
-                    SizedBox(
-                      height: context.h * 0.02,
+            height: context.h,
+            width: context.h,
+            child: Form(
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: context.h * 0.02,
+                  ),
+                  SizedBox(
+                    height: context.h * 0.08,
+                    width: context.h * 0.45,
+                    child: Text(
+                      'Please fill in the field below to reset your current password.',
+                      style: TextStyle(
+                          fontSize: SizeConst.elevatedbuttontextsize,
+                          color: ColorConst.greyColor),
                     ),
-                    SizedBox(
-                      height: context.h * 0.08,
-                      width: context.h * 0.45,
-                      child: Text(
-                        'Please fill in the field below to reset your current password.',
-                        style: TextStyle(
-                            fontSize: SizeConst.elevatedbuttontextsize,
-                            color: ColorConst.greyColor),
-                      ),
-                    ),
-                    forms(
-                        context: context,
-                        title: 'New Password',
-                        hint: 'New Password'),
-                        SizedBox(height: context.h*0.01,),
-                    forms(
-                        context: context,
-                        title: 'New Password Confirmation',
-                        hint: 'New Password Confirmation'),
-                        SizedBox(height: context.h*0.04,),
-                    MyElevatedButton.button(
-                        context: context,
-                        title: 'Reset Password',
-                        route: () {
-                          debugPrint("AUTH page finished");
-                        })
-                  ],
-                ),
-              )),
+                  ),
+                  forms(
+                      context: context,
+                      title: 'New Password',
+                      hint: 'New Password'),
+                  SizedBox(
+                    height: context.h * 0.01,
+                  ),
+                  forms(
+                      context: context,
+                      title: 'New Password Confirmation',
+                      hint: 'New Password Confirmation'),
+                  SizedBox(
+                    height: context.h * 0.04,
+                  ),
+                  MyElevatedButton.button(
+                    context: context,
+                    title: 'Reset Password',
+                    route: () {
+                      debugPrint("AUTH page finished");
+                      Navigator.pushNamedAndRemoveUntil(
+                          context, '/home', (route) => false);
+                    },
+                  )
+                ],
+              ),
+            ),
+          ),
         );
       },
       listener: (context, state) {},
@@ -90,56 +98,55 @@ class ResetPasswordPage extends StatelessWidget {
           const SizedBox(
             height: 10.0,
           ),
-           TextFormField(
-              obscureText:
+          TextFormField(
+            obscureText:
+                title == 'New Password' || title == 'Password Confirmation'
+                    ? true
+                    : false,
+            decoration: InputDecoration(
+              fillColor: context.watch<MainCubit>().isDark
+                  ? ColorConst.fieldColor
+                  : Colors.transparent,
+              filled: true,
+              suffixIcon:
                   title == 'New Password' || title == 'Password Confirmation'
-                      ? true
-                      : false,
-              decoration: InputDecoration(
-                fillColor: context.watch<MainCubit>().isDark
-                    ? ColorConst.fieldColor
-                    : Colors.transparent,
-                filled: true,
-                suffixIcon:
-                    title == 'New Password' || title == 'Password Confirmation'
-                        ? Container(
-                            height: context.h * 0.042,
-                            width: context.h * 0.048,
-                            alignment: Alignment.center,
-                            child: SvgPicture.asset('assets/svg/openeye.svg'),
-                          ).onClick(() {
-                            debugPrint("Secure");
-                          })
-                        : SizedBox(
-                            height: context.h * 0.048,
-                            width: context.h * 0.045,
-                          ),
-                hintText: hint,
-                hintStyle: TextStyle(
+                      ? Container(
+                          height: context.h * 0.042,
+                          width: context.h * 0.048,
+                          alignment: Alignment.center,
+                          child: SvgPicture.asset('assets/svg/openeye.svg'),
+                        ).onClick(() {
+                          debugPrint("Secure");
+                        })
+                      : SizedBox(
+                          height: context.h * 0.048,
+                          width: context.h * 0.045,
+                        ),
+              hintText: hint,
+              hintStyle: TextStyle(
+                color: ColorConst.greyColor,
+                fontSize: SizeConst.elevatedbuttontextsize,
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(100.0),
+                borderSide: BorderSide(
                   color: ColorConst.greyColor,
-                  fontSize: SizeConst.elevatedbuttontextsize,
                 ),
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(100.0),
-                  borderSide: BorderSide(
-                    color: ColorConst.greyColor,
-                  ),
+              ),
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(100.0),
+                borderSide: BorderSide(
+                  color: ColorConst.greyColor,
                 ),
-                enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(100.0),
-                  borderSide: BorderSide(
-                    color: ColorConst.greyColor,
-                  ),
-                ),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(100.0),
-                  borderSide: BorderSide(
-                    color: ColorConst.greyColor,
-                  ),
+              ),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(100.0),
+                borderSide: BorderSide(
+                  color: ColorConst.greyColor,
                 ),
               ),
             ),
-        
+          ),
         ],
       ),
     );
