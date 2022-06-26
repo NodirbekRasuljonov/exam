@@ -99,7 +99,9 @@ class ProfilePage extends StatelessWidget {
                                   'assets/svg/profilesvg/customerdark.svg',
                               lightIcon:
                                   'assets/svg/profilesvg/customerlight.svg',
-                              function: () {},
+                              function: () {
+                                Navigator.pushNamed(context, '/customer');
+                              },
                               context: context),
                           menu(
                               title: 'Change Password',

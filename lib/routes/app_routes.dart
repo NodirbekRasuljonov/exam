@@ -7,6 +7,7 @@ import 'package:exam/onboarding/splashscreen.dart';
 import 'package:exam/views/home/view/home_page.dart';
 import 'package:exam/views/profile/view/menus/addres/view/address_page.dart';
 import 'package:exam/views/profile/view/menus/changepasswword/view/change_password_page.dart';
+import 'package:exam/views/profile/view/menus/customer_Sevice.dart/view/customer_service_page.dart';
 import 'package:exam/views/profile/view/menus/editprofile/view/edit_profile_page.dart';
 import 'package:exam/views/profile/view/menus/editprofile/view/editprofile_otp.dart';
 import 'package:exam/views/profile/view/menus/notifications/view/notification_Settings_page.dart';
@@ -88,6 +89,10 @@ class AppRoutes {
         case '/addpayment':
         return MaterialPageRoute(
           builder: (context) => AddPaymnetMethodPage(),
+        );
+        case '/customer':
+        return MaterialPageRoute(
+          builder: (context) => CustomerServicePage(),
         );
         
     }
