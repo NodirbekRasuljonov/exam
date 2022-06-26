@@ -12,6 +12,7 @@ import 'package:exam/views/profile/view/menus/editprofile/view/edit_profile_page
 import 'package:exam/views/profile/view/menus/editprofile/view/editprofile_otp.dart';
 import 'package:exam/views/profile/view/menus/notifications/view/notification_Settings_page.dart';
 import 'package:exam/views/profile/view/menus/notifications/view/notification_page.dart';
+import 'package:exam/views/profile/view/menus/orders/view/order_history_page.dart';
 import 'package:exam/views/profile/view/menus/orders/view/orders_Page.dart';
 import 'package:exam/views/profile/view/menus/payment_method/view/add_payment_method.dart';
 import 'package:exam/views/profile/view/menus/payment_method/view/payment_method_page.dart';
@@ -93,6 +94,10 @@ class AppRoutes {
         case '/customer':
         return MaterialPageRoute(
           builder: (context) => CustomerServicePage(),
+        );
+        case '/history':
+        return MaterialPageRoute(
+          builder: (context) => OrderHistoryPage(),
         );
         
     }

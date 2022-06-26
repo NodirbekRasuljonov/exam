@@ -2,6 +2,10 @@ abstract class OrdersState{
   OrdersState();
 }
 
-class OrdersInitialState extends OrdersState{
-  OrdersInitialState();
+class OrdersOngoingState extends OrdersState{
+  OrdersOngoingState();
+}
+
+class OrdersHistoryState extends OrdersState{
+  OrdersHistoryState();
 }
