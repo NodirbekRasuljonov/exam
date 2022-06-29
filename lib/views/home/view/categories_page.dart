@@ -1,29 +1,31 @@
+import 'dart:math';
+
 import 'package:exam/core/components/my_textstyle.dart';
 import 'package:exam/core/constants/color_const.dart';
 import 'package:exam/core/constants/size_constants.dart';
 import 'package:exam/core/extensions/size_extension.dart';
 import 'package:exam/main/cubit/main_cubit.dart';
 import 'package:exam/mock/mock_data.dart';
-import 'package:exam/views/explore/cubit/explore_cubit.dart';
-import 'package:exam/views/explore/state/explore_state.dart';
+import 'package:exam/views/home/cubit/home_cubit.dart';
+import 'package:exam/views/home/state/home_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:on_click/on_click.dart';
+import 'package:on_click/extensions/click_extension.dart';
 
-class ExplorePage extends StatelessWidget {
-  const ExplorePage({Key? key}) : super(key: key);
+class CategoriesPage extends StatelessWidget {
+  const CategoriesPage({Key? key, required Categories cat}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<ExploreCubit, ExploreState>(
+    return BlocConsumer<HomeCubit, HomeState>(
       builder: (context, state) {
         return Scaffold(
           appBar: AppBar(
             backgroundColor: Colors.transparent,
             elevation: 0.0,
             title: Text(
-              'Explore',
+              'Vegetables',
               style: MyTextStyle.textStyle(
                 context: context,
                 size: SizeConst.homeAppBarTitle,
@@ -75,7 +77,7 @@ class ExplorePage extends StatelessWidget {
       padding: EdgeInsets.all(context.h * 0.02),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20.0),
-        color: Color(0xffE3553F).withOpacity(0.1),
+        color: ColorConst.catColor[Random().nextInt(3)],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

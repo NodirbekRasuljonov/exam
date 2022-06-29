@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:exam/views/home/state/home_state.dart';
+import 'package:flutter/cupertino.dart';
 
 class HomeCubit extends Cubit<HomeState> {
   HomeCubit()
@@ -31,5 +32,27 @@ class HomeCubit extends Cubit<HomeState> {
         HomeProfileState(),
       );
     }
+  }
+
+
+  String tashkent='tashkent';
+  String london='london';
+
+  void changeLocation({required value,required List<String> v}){
+    if(v[0]=='tashkent'){
+      v[0]=value;
+    emit(HomeInitialState(),);
+    }
+    else if(v[1]=='london'){
+      v[0]=value;
+    emit(HomeInitialState(),);
+
+    }
+
+    
+  }
+
+  void go(BuildContext context){
+    Navigator.pushNamed(context, '/cat');
   }
 }

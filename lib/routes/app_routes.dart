@@ -1,3 +1,4 @@
+import 'package:exam/mock/mock_data.dart';
 import 'package:exam/onboarding/auth/view/forgot_password_page.dart';
 import 'package:exam/onboarding/auth/view/otp_page.dart';
 import 'package:exam/onboarding/auth/view/reset_password_page.dart';
@@ -5,6 +6,8 @@ import 'package:exam/onboarding/auth/view/signin_page.dart';
 import 'package:exam/onboarding/auth/view/signup_page.dart';
 import 'package:exam/onboarding/splashscreen.dart';
 import 'package:exam/views/explore/view/explore_page.dart';
+import 'package:exam/views/home/view/categories_page.dart';
+import 'package:exam/views/home/view/coupon_page.dart';
 import 'package:exam/views/home/view/home_page.dart';
 import 'package:exam/views/profile/view/menus/addres/view/address_page.dart';
 import 'package:exam/views/profile/view/menus/changepasswword/view/change_password_page.dart';
@@ -28,83 +31,92 @@ class AppRoutes {
         return MaterialPageRoute(
           builder: (context) => SplashScreen(),
         );
-        case '/signIn':
+      case '/signIn':
         return MaterialPageRoute(
           builder: (context) => SignInPage(),
         );
-         case '/signUp':
+      case '/signUp':
         return MaterialPageRoute(
           builder: (context) => SignUpaPage(),
         );
-        case '/forgotpass':
+      case '/forgotpass':
         return MaterialPageRoute(
           builder: (context) => ForgotPasswordPage(),
         );
-        case '/otp':
+      case '/otp':
         return MaterialPageRoute(
           builder: (context) => OTPPage(),
         );
-        case '/resetpass':
+      case '/resetpass':
         return MaterialPageRoute(
           builder: (context) => ResetPasswordPage(),
         );
-        case '/home':
+      case '/home':
         return MaterialPageRoute(
           builder: (context) => HomePage(),
         );
-        case '/profile':
+      case '/profile':
         return MaterialPageRoute(
           builder: (context) => ProfilePage(),
         );
-        case '/notification':
+      case '/notification':
         return MaterialPageRoute(
           builder: (context) => NotificationPage(),
         );
-        case '/notificationsettings':
+      case '/notificationsettings':
         return MaterialPageRoute(
           builder: (context) => NotificationSettings(),
         );
-        case '/editprofile':
+      case '/editprofile':
         return MaterialPageRoute(
           builder: (context) => EditProfilePage(),
         );
-        case '/editprofileotp':
+      case '/editprofileotp':
         return MaterialPageRoute(
           builder: (context) => EditProfileOTP(),
         );
-        case '/changepass':
+      case '/changepass':
         return MaterialPageRoute(
           builder: (context) => ChangePasswordPage(),
         );
-        case '/address':
+      case '/address':
         return MaterialPageRoute(
           builder: (context) => AddressPage(),
         );
-        case '/payment':
+      case '/payment':
         return MaterialPageRoute(
           builder: (context) => PaymentMethodPage(),
         );
-        case '/orders':
+      case '/orders':
         return MaterialPageRoute(
           builder: (context) => OrdersPage(),
         );
-        case '/addpayment':
+      case '/addpayment':
         return MaterialPageRoute(
           builder: (context) => AddPaymnetMethodPage(),
         );
-        case '/customer':
+      case '/customer':
         return MaterialPageRoute(
           builder: (context) => CustomerServicePage(),
         );
-        case '/history':
+      case '/history':
         return MaterialPageRoute(
           builder: (context) => OrderHistoryPage(),
         );
-        case '/explore':
+      case '/explore':
         return MaterialPageRoute(
           builder: (context) => ExplorePage(),
         );
-        
+      case '/cat':
+        return MaterialPageRoute(
+          builder: (context) => CategoriesPage(
+            cat: (args as Categories),
+          ),
+        );
+      case '/coupon':
+        return MaterialPageRoute(
+          builder: (context) => CouponPage(),
+        );
     }
   }
 }
