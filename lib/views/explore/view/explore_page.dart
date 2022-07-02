@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:exam/core/components/my_textstyle.dart';
 import 'package:exam/core/constants/color_const.dart';
 import 'package:exam/core/constants/size_constants.dart';
@@ -75,7 +77,7 @@ class ExplorePage extends StatelessWidget {
       padding: EdgeInsets.all(context.h * 0.02),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20.0),
-        color: Color(0xffE3553F).withOpacity(0.1),
+        color: ColorConst.catColor[Random().nextInt(3)],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

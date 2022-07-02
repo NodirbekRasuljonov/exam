@@ -8,6 +8,7 @@ import 'package:exam/onboarding/splashscreen.dart';
 import 'package:exam/views/explore/view/explore_page.dart';
 import 'package:exam/views/home/view/categories_page.dart';
 import 'package:exam/views/home/view/coupon_page.dart';
+import 'package:exam/views/home/view/detail_page.dart';
 import 'package:exam/views/home/view/home_page.dart';
 import 'package:exam/views/profile/view/menus/addres/view/address_page.dart';
 import 'package:exam/views/profile/view/menus/changepasswword/view/change_password_page.dart';
@@ -116,6 +117,10 @@ class AppRoutes {
       case '/coupon':
         return MaterialPageRoute(
           builder: (context) => CouponPage(),
+        );
+        case '/details':
+        return MaterialPageRoute(
+          builder: (context) => ProductDetailPage(),
         );
     }
   }
