@@ -3,11 +3,13 @@ class MockData {
   String price;
   String imgurl;
   String market;
+  String detail;
   MockData(
       {required this.title,
       required this.price,
       required this.imgurl,
-      required this.market});
+      required this.market,
+      required this.detail});
 }
 
 class Vegetables {
@@ -41,7 +43,9 @@ class Vegetables {
         title: title[index],
         price: "\$4.0",
         imgurl: vegetablesimg[index],
-        market: 'Korzinka'),
+        market: 'Korzinka',
+        detail:
+            'Paprika is a fruit-producing plant that tastes sweet and slightly spicy from the eggplant or Solanaceae tribe. Its green, yellow, red, or purple fru..Read more'),
   );
 }
 

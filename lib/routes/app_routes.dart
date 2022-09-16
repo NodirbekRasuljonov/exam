@@ -118,9 +118,11 @@ class AppRoutes {
         return MaterialPageRoute(
           builder: (context) => CouponPage(),
         );
-        case '/details':
+      case '/details':
         return MaterialPageRoute(
-          builder: (context) => ProductDetailPage(),
+          builder: (context) => ProductDetailPage(
+            data: (args as MockData),
+          ),
         );
     }
   }
