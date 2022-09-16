@@ -73,7 +73,7 @@ class CouponPage extends StatelessWidget {
         borderRadius: BorderRadius.circular(20.0),
       ),
       height: context.h * 0.091,
-      width: context.h * 0.5,
+      width: context.h * 0.51,
       child: Row(
         children: [
           SizedBox(
@@ -84,7 +84,7 @@ class CouponPage extends StatelessWidget {
             width: context.h * 0.02,
           ),
           SizedBox(
-            width: context.h * 0.35,
+            width: context.h * 0.33,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

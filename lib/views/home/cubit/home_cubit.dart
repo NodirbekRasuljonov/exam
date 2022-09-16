@@ -10,6 +10,17 @@ class HomeCubit extends Cubit<HomeState> {
 
   int currentindex = 0;
 
+  int number=1;
+  void add(){
+    number+=1;
+    emit(HomeInitialState(),);
+  }
+
+  void remove(){
+    number-=1;
+    emit(HomeInitialState(),);
+  }
+
   void changetheIndex({required int index}) {
     if (index == 0) {
       currentindex = index;
