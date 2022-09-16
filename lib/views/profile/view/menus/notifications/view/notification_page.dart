@@ -83,7 +83,7 @@ class NotificationPage extends StatelessWidget {
               ? SvgPicture.asset(darkIcon)
               : SvgPicture.asset(lightIcon),
           SizedBox(
-            width: context.h * 0.024,
+            width: context.h * 0.02,
           ),
           SizedBox(
             height: context.h * 0.12,

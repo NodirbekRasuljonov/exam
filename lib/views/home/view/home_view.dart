@@ -78,7 +78,7 @@ class HomeView extends StatelessWidget {
           ),
           Expanded(
             child: ListView.builder(
-              itemExtent: context.h*0.196,
+              itemExtent: context.h * 0.196,
               itemBuilder: (context, index) {
                 return productbuilder(context: context, index: index);
               },
@@ -91,12 +91,11 @@ class HomeView extends StatelessWidget {
     );
   }
 
-  Widget productbuilder(
-      {required BuildContext context, required int index}) {
+  Widget productbuilder({required BuildContext context, required int index}) {
     List<MockData> data = Vegetables.vegetables;
     return Container(
       padding: EdgeInsets.all(context.h * 0.02),
-      margin: EdgeInsets.only(right: context.h*0.02),
+      margin: EdgeInsets.only(right: context.h * 0.02),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20.0),
         color: ColorConst.catColor[Random().nextInt(3)],
@@ -134,9 +133,15 @@ class HomeView extends StatelessWidget {
           )
         ],
       ),
-    ).onClick(() { 
-      Navigator.pushNamed(context, '/details');
-    });
+    ).onClick(
+      () {
+        Navigator.pushNamed(
+          context,
+          '/details',
+          arguments: data[index],
+        );
+      },
+    );
   }
 
   SizedBox categories(BuildContext context) {
@@ -310,7 +315,7 @@ class HomeView extends StatelessWidget {
             ],
           ),
           SizedBox(
-            width: context.h * 0.16,
+            width: context.h * 0.1,
           ),
           Icon(
             Icons.chevron_right_outlined,
