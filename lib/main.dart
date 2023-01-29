@@ -76,7 +76,7 @@ class MyApp extends StatelessWidget {
       builder: (context, state) {
         return MaterialApp(
           onGenerateRoute: appRoutes.onGenerateRoute,
-          initialRoute: '/home',
+          initialRoute: '/splash',
           theme: context.watch<MainCubit>().isDark
               ? ThemeComp.darkmode
               : ThemeComp.lightmode,
